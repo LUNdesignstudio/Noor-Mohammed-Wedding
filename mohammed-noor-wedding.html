@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دعوة · Noor &amp; Mohammed</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Playfair+Display:wght@500;600&family=Tajawal:wght@400;500&display=swap">
+<style>
+:root{color-scheme:light;--bg:#fbf8f2;--card:#faf8f5;--ink:#433c33;--gold:#b3924e;--gold2:#cbb27a;--line:#ece2c9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{height:100%;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg) url("Ivory Embossed Floral Wallpaper.png") center/cover fixed;color:var(--ink);font-family:Tajawal,system-ui,sans-serif;text-align:center;overflow-x:hidden}
+body.lock{overflow:hidden;height:100%}
+[lang=en] body,body.en{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.1rem}
+h2,.ar-script{font-family:Amiri,"Times New Roman",serif;color:var(--gold);font-weight:700}
+.en h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600}
+#lang{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;z-index:50;display:flex;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:4px;direction:ltr}
+#lang button{border:0;background:none;color:var(--gold);font:600 .85rem system-ui;padding:7px 14px;border-radius:16px;cursor:pointer}
+#lang button.on{background:var(--gold2);color:#fff}
+#music-toggle{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;z-index:50;max-width:calc(100vw - 24px);padding:10px 14px;border:1px solid var(--line);border-radius:22px;background:var(--card);color:var(--gold);font:600 .85rem Tajawal,system-ui,sans-serif;cursor:pointer}
+/* envelope */
+#env{position:fixed;inset:0;z-index:100;background:linear-gradient(160deg,#efe3d3,#e6d6c3);display:flex;align-items:center;justify-content:center;transition:opacity 1s .5s}
+#env .flap{position:absolute;top:0;left:0;right:0;height:52%;background:#f3e8da;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s;filter:drop-shadow(0 6px 8px #0002)}
+#env .seal{position:relative;z-index:2;display:grid;place-items:center;width:140px;height:140px;padding:0;border-radius:50%;border:0;cursor:pointer;background:none;margin-top:-4%;transition:transform .5s,opacity .4s;animation:pulse 2s infinite}
+#env .seal img{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 6px 10px #0005)}
+#env .seal.fb{border:2px solid var(--gold);background:radial-gradient(circle at 35% 30%,#f3e6c1,#cbb27a);box-shadow:0 6px 18px #0003,inset 0 0 0 8px #f3e6c1,inset 0 0 0 10px var(--gold)}
+#env p{position:absolute;bottom:12%;color:var(--gold);margin:0;font-size:1.05rem}
+#env.open .flap{transform:rotateX(180deg)}#env.open .seal{transform:scale(0);opacity:0}#env.open{opacity:0;pointer-events:none}
+@keyframes pulse{50%{box-shadow:0 0 0 14px #c4a86e33}}
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#f6ead0;background:radial-gradient(ellipse at 20% 0,#e9d6a6 0,transparent 40%),radial-gradient(ellipse at 85% 10%,#d9bd7c 0,transparent 35%),linear-gradient(180deg,#6b4f27,#4a3519 55%,#2e2010)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3a2810aa,#3a281022 45%,#3a2810bb);pointer-events:none}
+.hero>*:not(video){position:relative;z-index:2}
+.monofb{font:700 7rem/1 Amiri,serif;background:linear-gradient(135deg,#f6e3a4,#b8933f 60%,#f0d890);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mono{display:block;width:clamp(130px,34vw,220px);height:auto;filter:invert(1) sepia(1) saturate(2.4) hue-rotate(5deg) brightness(1.12);mix-blend-mode:screen}
+.hero .date{font:400 1.8rem "Cormorant Garamond",serif;letter-spacing:.12em;margin-top:18px;direction:ltr}
+.hero .hint{position:absolute;z-index:2;bottom:24px;font-size:.9rem;opacity:.7;animation:pulse 2s infinite}
+section{padding:clamp(30px,7vw,56px) 16px;max-width:552px;margin:0 auto}
+.card{position:relative;isolation:isolate;border-radius:28px;padding:32px 22px}
+.card:before{content:"";position:absolute;inset:0;z-index:-1;background:var(--card);border:1px solid var(--line);border-radius:inherit;box-shadow:0 8px 30px #0001;opacity:1;transform:none;transition:opacity .9s ease,transform .9s ease}
+.card>*{position:relative;z-index:1}
+.reveal-ready .reveal-panel:before{opacity:0;transform:translateY(12px)}
+.reveal-ready .reveal-panel.is-visible:before{opacity:1;transform:translateY(0)}
+.reveal-ready .reveal-item{opacity:0;transform:translateY(9px);transition:opacity .9s ease,transform .9s ease}
+.reveal-ready .reveal-panel.is-visible .reveal-item{opacity:1;transform:translateY(0)}
+.reveal-ready .reveal-section.is-visible>.reveal-item{opacity:1;transform:translateY(0)}
+.blessing{font:700 1.7rem/1.9 Amiri,serif;color:var(--gold)}
+.blessing img{display:block;width:min(100%,420px);height:clamp(76px,20vw,110px);object-fit:cover;object-position:center;margin:0 auto}
+.blessing-en{display:none}
+.en .blessing img{display:none}
+.en .blessing-en{display:block}
+.garland{display:block;width:100%;max-width:none;height:auto;object-fit:contain;margin:0;pointer-events:none}
+.card p{line-height:2.1;margin:10px 0}
+.names{font:700 2.6rem/1.3 Amiri,serif;color:var(--gold)}
+.couple-names{font-family:"Aref Ruqaa",Amiri,serif}
+.en .names{font:500 2.1rem/1.4 "Playfair Display",Georgia,serif;letter-spacing:.05em;background:linear-gradient(120deg,#8f7035,#cbb27a 45%,#a8863f 75%,#d9c48d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.small{opacity:.8}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px;direction:ltr}
+.cd div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 4px}
+.cd b{display:block;font:600 2rem Amiri,serif;color:var(--gold)}.cd span{font-size:.85rem;opacity:.8}
+.map{height:190px;border-radius:16px;margin:16px 0;background:#e9e3d3;border:1px solid var(--line);overflow:hidden}
+.map iframe{display:block;width:100%;height:100%;border:0}
+.btns{display:flex;gap:10px}.btns a,.btns button,.send{flex:1;display:block;padding:14px 8px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--gold);font:inherit;font-weight:500;text-decoration:none;cursor:pointer}
+.btns a.fill,.send{background:var(--gold2);color:#fff;border-color:var(--gold2)}
+.tl{position:relative;margin:24px 0 4px}.tl:before{content:"";position:absolute;top:10px;bottom:10px;left:50%;width:3px;background:var(--gold2);transform:translateX(-50%)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;margin:28px 0;direction:ltr}
+.row i{width:22px;height:22px;border-radius:50%;background:var(--gold2);margin:auto;box-shadow:0 0 14px var(--gold2);position:relative}
+.row .t{text-align:right;padding-right:10px}.row .e{text-align:left;padding-left:10px}
+[dir=rtl] .row .t{grid-column:3;text-align:left;padding:0 0 0 10px}
+[dir=rtl] .row i{grid-column:2;grid-row:1}
+[dir=rtl] .row .e{grid-column:1;text-align:right;padding:0 10px 0 0}
+.rule{display:flex;align-items:center;gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0;text-align:start}
+.rule em{font-style:normal;font-size:1.5rem;background:#c4a86e33;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;flex:none}
+input[type=text],input[type=email],input[type=number]{width:100%;padding:16px;border-radius:16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;margin:8px 0 14px}
+.choice{display:flex;gap:10px;margin-bottom:14px}.choice button{flex:1;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.choice button.on{background:var(--gold2);color:#fff;border-color:var(--gold2)}
+.send:disabled{opacity:.45}.fl{display:block;margin-top:14px;color:var(--gold);font-size:.95rem}
+.en footer{font:500 1.7rem "Playfair Display",Georgia,serif;letter-spacing:.05em}.orn{font-size:.7em;margin:0 .3em;vertical-align:.1em}
+footer{padding:30px 20px 50px;font:700 2rem Amiri,serif;color:var(--gold)}
+@media(max-width:480px){
+  body{background-attachment:scroll}
+  section{padding-right:12px;padding-left:12px}
+  .card{padding:26px 16px;border-radius:22px}
+  .blessing{font-size:1.45rem;line-height:1.7}
+  .names{font-size:2.2rem}
+  .cd{gap:6px}
+  .cd div{padding:12px 2px}
+  .cd b{font-size:1.65rem}
+  .cd span{font-size:.76rem}
+  .row{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);margin:24px 0;font-size:.9rem}
+  .row i{width:18px;height:18px}
+  .row .t{padding-right:7px}
+  .row .e{padding-left:7px}
+  [dir=rtl] .row .t{padding-left:7px}
+  [dir=rtl] .row .e{padding-right:7px}
+  .map{height:170px}
+  .btns{gap:8px}
+  .btns a{padding:12px 6px;font-size:.9rem}
+  .choice{gap:8px}
+  .choice button{padding:12px 6px;font-size:.92rem}
+}
+@media(max-width:350px){
+  .row{font-size:.82rem}
+  .cd span{font-size:.7rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal-ready .reveal-panel:before,.reveal-ready .reveal-panel.is-visible:before{opacity:1;transform:none;transition:none}
+  .reveal-ready .reveal-item{opacity:1;transform:none;transition:none}
+}
+.credit{margin:-26px 0 0;padding:0 20px calc(36px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.85rem;color:#8c764e;opacity:.92}.credit a{color:#8c764e;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:.35em;direction:ltr}.credit svg{width:1.05em;height:1.05em;flex:none}
+</style>
+</head>
+<body class="lock">
+<div id="lang"><button data-l="en">EN</button><button data-l="ar" class="on">AR</button></div>
+<button id="music-toggle" type="button" data-ar="♫ تشغيل الموسيقى" data-en="♫ Play music" aria-label="تشغيل الموسيقى"></button>
+<audio id="wedding-music" src="Music.mp3" preload="none" loop></audio>
+
+<div id="env"><div class="flap"></div><button class="seal" id="seal" aria-label="فتح الدعوة"><img src="seal.png.png" alt="" onerror="this.parentNode.classList.add('fb');this.remove()"></button><p data-ar="اضغط لفتح الدعوة" data-en="Tap to open the invitation"></p></div>
+
+<div class="hero"><video autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="wedding_video.mp4" type="video/mp4"></video><img class="mono" id="mono" src="Luxurious Gold Arabic Monogram.png" alt="م ن" onerror="var d=document.createElement('div');d.className='monofb';d.textContent='م · ن';this.replaceWith(d)"><div class="date">26 · 12 · 2026</div><div class="hint">⌄</div></div>
+<section><div class="card">
+<div class="blessing"><img src="Duaa.png" alt="بارك الله لهما وبارك عليهما وبينهما جمع في خير"><span class="blessing-en">MAY ALLAH BLESS THEM & UNITE THEM IN GOODNESS</span></div>
+<p data-ar="الأيام الجميلة لا تكتمل إلا بكن،<br>والأوقات السعيدة لا تبدأ إلا بوجودكن." data-en="Beautiful days are incomplete without you,<br>and happy moments begin only with your presence."></p>
+<p class="small" data-ar="تتشرف حرم" data-en="Mr."></p>
+<div class="names" data-ar="حسن رمضان" data-en="Hassan Ramadan"></div>
+<p data-ar="بدعوتكن لحضور حفل زفاف نجلها" data-en="is honored to invite you to the wedding of his son"></p>
+<div class="names couple-names" data-ar="محمد و نور" data-en="Mohammed &amp; Noor"></div>
+<p class="small" data-ar="رمضان · الزبيدي" data-en="Ramadan · Al-Zubiedi"></p>
+<p data-ar="وذلك بمشيئة الله تعالى يوم السبت." data-en="God willing, on Saturday."></p>
+</div></section>
+
+<img class="garland" src="Elegant Ivory Floral Clock Garland.png" alt="" aria-hidden="true">
+
+<section>
+<p class="small" data-ar="٢٦ ديسمبر ٢٠٢٦" data-en="December 26, 2026"></p>
+<h2 data-ar="المتبقي حتى فرحتنا" data-en="Counting down to our joy"></h2>
+<div class="cd"><div><b id="d">0</b><span data-ar="أيام" data-en="Days"></span></div><div><b id="h">0</b><span data-ar="ساعات" data-en="Hours"></span></div><div><b id="m">0</b><span data-ar="دقائق" data-en="Minutes"></span></div><div><b id="s">0</b><span data-ar="ثواني" data-en="Seconds"></span></div></div>
+</section>
+
+<section><div class="card">
+<h2 data-ar="موقع الفرح" data-en="Venue"></h2>
+<p><b>Sapphire Addis Hotel</b><br><span data-ar="الدور التاسع" data-en="9th Floor"></span></p>
+<div class="map"><iframe title="Sapphire Addis Hotel location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Sapphire%20Addis%20Hotel%2C%20Addis%20Ababa&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div>
+<div class="btns">
+<a class="fill" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mohammed%20%26%20Noor%20Wedding&location=Sapphire%20Addis%20Hotel%2C%209th%20Floor&dates=20261226T143000Z/20261226T200000Z" data-ar="إضافة إلى التقويم" data-en="Add to calendar"></a>
+<a target="_blank" rel="noopener" href="https://maps.app.goo.gl/nuuZRrDFJEJ25N9dA" data-ar="افتح في الخريطة" data-en="Open in Maps"></a>
+</div></div></section>
+
+<section><div class="card">
+<h2 data-ar="برنامج المناسبة" data-en="Program"></h2>
+<div class="tl" id="tl"></div>
+</div></section>
+
+<section><div class="card">
+<h2 data-ar="تعليمات الحضور" data-en="Guest notes"></h2>
+<div class="rule"><em>👶</em><span data-ar="يمنع اصطحاب الأطفال" data-en="Kindly no children"></span></div>
+<div class="rule"><em>📵</em><span data-ar="يمنع التصوير بالجوال" data-en="No phone photography"></span></div>
+<div class="rule"><em>✉️</em><span data-ar="يرجى إبراز الدعوة عند الحضور" data-en="Please show this invitation at the entrance"></span></div>
+</div></section>
+
+<section>
+<h2 data-ar="الدعوة شخصية" data-en="Personal invitation"></h2>
+<p class="small" data-ar="نتشرف بحضوركم" data-en="We would be honored by your presence"></p>
+<div class="card" style="background:#fff8;">
+<form id="rsvp-form">
+<label for="nm" data-ar="الاسم الكريم" data-en="Guest name"></label>
+<input type="text" id="nm" name="guest_name" autocomplete="name" required data-ph-ar="أدخل اسمك الكريم" data-ph-en="Enter your name">
+<label for="email" data-ar="البريد الإلكتروني" data-en="Email address"></label>
+<input type="email" id="email" name="guest_email" autocomplete="email" required data-ph-ar="أدخل بريدك الإلكتروني" data-ph-en="Enter your email address">
+<div class="choice"><button type="button" data-c="yes" data-ar="تأكيد الحضور" data-en="Attending"></button><button type="button" data-c="no" data-ar="الاعتذار عن الحضور" data-en="Regretfully decline"></button></div>
+<label for="party-count" data-ar="كم عدد الأفراد القادمين؟" data-en="How many members are coming?"></label>
+<input type="number" id="party-count" name="guest_count" min="1" max="150" inputmode="numeric" disabled data-ph-ar="عدد المقاعد المطلوبة" data-ph-en="Number of seats">
+<button class="send" id="send" type="submit" disabled data-ar="إرسال الرسالة" data-en="Send reply"></button>
+</form>
+<p class="small" id="ok" style="display:none"></p>
+<div id="pass" style="display:none"><div id="qr" style="display:inline-block;background:#fff;padding:12px;border-radius:14px"></div><p class="small" id="ptxt"></p></div>
+</div></section>
+
+<footer id="ft" data-ar="محمد <span class=&quot;orn&quot;>♥</span> نور" data-en="Mohammed <span class=&quot;orn&quot;>♥</span> Noor"></footer>
+<p class="credit"><span data-ar="تصميم" data-en="Designed by"></span> <a href="https://instagram.com/lun.design.studio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>@lun.design.studio</a></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+var WA="";/* ضع رقم الواتساب هنا مع رمز الدولة بدون + · Put WhatsApp number here with country code, no + */
+/* EmailJS setup: enter your public key, service ID, and template ID. In the template use
+   {{to_email}} as the recipient, {{email_subject}} as the subject, and {{{email_html}}} as the HTML body. */
+var EMAILJS_PUBLIC_KEY="Dc436a__8CBEslah-",EMAILJS_SERVICE_ID="service_tsh6xrh",EMAILJS_TEMPLATE_ID="template_rrjpst6";
+var RSVP_URL="";/* الصق رابط Apps Script هنا · paste the Apps Script web app URL here */
+function reserve(nm,email,t,party){return fetch(RSVP_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:nm,email:email,token:t,party:party})}).then(function(r){return r.json()})}
+var lang="ar",choice="",T=new Date("2026-12-26T17:30:00+03:00");
+var music=document.getElementById("wedding-music"),musicToggle=document.getElementById("music-toggle");
+function updateMusicButton(error){var label;
+if(error)label=lang=="ar"?"تعذر التشغيل · حاول مجددًا":"Playback failed · Tap to retry";
+else if(music.paused)label=lang=="ar"?"♫ تشغيل الموسيقى":"♫ Play music";
+else label=music.muted?(lang=="ar"?"♫ تشغيل الصوت":"♫ Unmute music"):(lang=="ar"?"♫ كتم الموسيقى":"♫ Mute music");
+musicToggle.textContent=label;musicToggle.setAttribute("aria-label",label)}
+function playMusic(){music.muted=false;var playback=music.play();if(playback&&playback.then)playback.then(function(){updateMusicButton()}).catch(function(error){console.error("Wedding music playback failed:",error);updateMusicButton(true)})}
+var plan=[["5:30 PM","٥:٣٠ مساءً","Reception","الاستقبال"],["6:30 PM","٦:٣٠ مساءً","Wedding ceremony","مراسيم الزفاف"],["7:30 PM","٧:٣٠ مساءً","Dinner","العشاء"],["11:00 PM","١١:٠٠ مساءً","End","الانتهاء"]];
+function setLang(l){lang=l;var b=document.body;b.classList.toggle("en",l=="en");document.documentElement.lang=l;document.documentElement.dir=l=="ar"?"rtl":"ltr";
+document.querySelectorAll("[data-ar]").forEach(function(e){e.innerHTML=e.getAttribute("data-"+l)});
+document.querySelectorAll("[data-ph-ar]").forEach(function(e){e.placeholder=e.getAttribute("data-ph-"+l)});
+document.querySelectorAll("#lang button").forEach(function(x){x.classList.toggle("on",x.dataset.l==l)});
+updateMusicButton();
+var mo=document.getElementById("mono");if(mo&&mo.tagName=="IMG")mo.alt=l=="ar"?"م ن":"Arabic monogram: Meem and Noon";
+document.getElementById("tl").innerHTML=plan.map(function(p){return '<div class="row"><div class="t">'+(l=="ar"?p[1]:p[0])+'</div><i></i><div class="e">'+(l=="ar"?p[3]:p[2])+'</div></div>'}).join("");
+tick()}
+function n(x){return l_(x)}function l_(x){return lang=="ar"?x.toLocaleString("ar-EG"):String(x)}
+function tick(){var t=Math.max(0,T-Date.now()),s=Math.floor(t/1e3);
+document.getElementById("d").textContent=n(Math.floor(s/86400));document.getElementById("h").textContent=n(Math.floor(s%86400/3600));document.getElementById("m").textContent=n(Math.floor(s%3600/60));document.getElementById("s").textContent=n(s%60)}
+setInterval(tick,1000);
+document.querySelectorAll("#lang button").forEach(function(x){x.onclick=function(){setLang(x.dataset.l)}});
+function prepareReveals(){
+var body=document.body,panels=document.querySelectorAll(".card");
+panels.forEach(function(panel){
+panel.classList.add("reveal-panel");
+var order=0;
+Array.prototype.forEach.call(panel.children,function(child){
+if(child.id=="tl"){Array.prototype.forEach.call(child.children,function(row){row.classList.add("reveal-item");row.style.transitionDelay=(950+order++*160)+"ms"});return}
+if(child.tagName=="FORM"){Array.prototype.forEach.call(child.children,function(item){item.classList.add("reveal-item");item.style.transitionDelay=(950+order++*160)+"ms"});return}
+child.classList.add("reveal-item");child.style.transitionDelay=(950+order++*160)+"ms"
+})
+});
+document.querySelectorAll("section").forEach(function(section){
+Array.prototype.forEach.call(section.children,function(child){
+if(child.classList.contains("card"))return;
+section.classList.add("reveal-section");child.classList.add("reveal-item");child.style.transitionDelay=((section.querySelectorAll(":scope > .reveal-item").length-1)*160)+"ms"
+})
+});
+body.classList.add("reveal-ready")
+}
+function startReveals(){
+var targets=document.querySelectorAll(".reveal-panel,.reveal-section");
+if(!("IntersectionObserver" in window)){targets.forEach(function(target){target.classList.add("is-visible")});return}
+var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+targets.forEach(function(target){revealObserver.observe(target)})
+}
+prepareReveals();
+document.getElementById("seal").onclick=function(){document.getElementById("env").classList.add("open");document.body.classList.remove("lock");startReveals();playMusic();setTimeout(function(){document.getElementById("env").style.display="none"},1700)};
+musicToggle.onclick=function(){if(music.paused){playMusic();return}music.muted=!music.muted;updateMusicButton()};
+music.addEventListener("play",function(){updateMusicButton()});
+music.addEventListener("pause",function(){updateMusicButton()});
+music.addEventListener("volumechange",function(){updateMusicButton()});
+music.addEventListener("error",function(){console.error("Wedding music could not be loaded.");updateMusicButton(true)});
+var CAP=150,BASE=0;/* BASE = عدد المؤكدين مسبقًا (من النموذج) · guests already confirmed elsewhere */
+function seats(){try{return CAP-BASE-(+localStorage.getItem("mnCount")||0)}catch(x){return CAP-BASE}}
+function chk(){var form=document.getElementById("rsvp-form"),party=document.getElementById("party-count");document.getElementById("send").disabled=!(choice&&form.checkValidity()&&(choice!="yes"||+party.value>0))}
+document.querySelectorAll(".choice button").forEach(function(b){b.onclick=function(){choice=b.dataset.c;var party=document.getElementById("party-count");party.disabled=choice!="yes";party.required=choice=="yes";document.querySelectorAll(".choice button").forEach(function(x){x.classList.toggle("on",x==b)});chk()}});
+document.querySelectorAll("#nm,#email,#party-count").forEach(function(input){input.addEventListener("input",chk)});
+function tok(){var bytes=new Uint8Array(3);if(!window.crypto||!crypto.getRandomValues)throw new Error("Secure random code generation is not available.");crypto.getRandomValues(bytes);return "MN-"+Array.prototype.map.call(bytes,function(value){return ("0"+value.toString(16)).slice(-2)}).join("").toUpperCase()}
+function ticketContent(nm,t,party){return ["Mohammed & Noor Wedding","Guest: "+nm,"Status: Confirmed ("+party+" "+(party==1?"Confirmed Seat":"Confirmed Seats")+")","Pass Code: "+t,"Date: December 26, 2026","Venue: Sapphire Addis Hotel (9th Floor)"].join("\n")}
+function showPass(nm,t,party){var q=document.getElementById("qr");document.getElementById("pass").style.display="block";q.innerHTML="";
+if(!window.QRCode)throw new Error("QR code generator did not load.");
+new QRCode(q,{text:ticketContent(nm,t,party),width:176,height:176,correctLevel:QRCode.CorrectLevel.M});
+document.getElementById("ptxt").textContent=(lang=="ar"?"بطاقة الدخول · ":"Entry pass · ")+nm+" · "+t+" · "+party+" "+(party==1?(lang=="ar"?"مقعد مؤكد":"confirmed seat"):(lang=="ar"?"مقاعد مؤكدة":"confirmed seats"))}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]})}
+function buildEmailHtml(nm,t,party,qrImage){var safeName=escapeHtml(nm),safeCode=escapeHtml(t),safeCount=escapeHtml(party),safeQr=escapeHtml(qrImage);
+return '<div style="margin:0;background:#fbf8f2;padding:30px 12px;color:#433c33;font-family:Georgia,serif"><div style="max-width:620px;margin:auto;background:#fffdf9;border:1px solid #ece2c9;border-radius:20px;overflow:hidden"><div style="padding:28px 20px;text-align:center;background:#f5efdf;border-bottom:1px solid #ece2c9"><div style="font-size:12px;letter-spacing:4px;color:#9b7c3f">MOHAMMED &amp; NOOR</div><h1 style="margin:12px 0 0;color:#9b7c3f;font-weight:500">Your Official Entry Pass</h1><div style="margin-top:6px;color:#7c6b4b">بطاقة الدخول الرسمية</div></div><div style="padding:26px 28px"><p>Dear <strong>'+safeName+'</strong>,</p><p>Thank you for confirming your attendance! We are overjoyed to celebrate our special day with you.</p><p>Attached below is your official <strong>Digital Entry Pass &amp; QR Code</strong>. Please save this pass to your phone or present the QR code at the entrance upon your arrival.</p><h2 style="color:#9b7c3f;font-size:19px">Event Details</h2><p>📅 <strong>Date:</strong> Saturday, December 26, 2026<br>📍 <strong>Venue:</strong> Sapphire Addis Hotel, 9th Floor<br>🎟️ <strong>Pass Code:</strong> '+safeCode+'<br><strong>Confirmed seats:</strong> '+safeCount+'</p><div style="text-align:center;margin:24px 0"><img src="'+safeQr+'" width="176" height="176" alt="Entry pass QR code" style="display:inline-block;border:12px solid #fff;border-radius:12px"><div style="margin-top:8px;color:#9b7c3f;font-size:13px">MOHAMMED &amp; NOOR · '+safeCode+'</div></div><p>We look forward to creating unforgettable memories together!</p><p>Warmest regards,<br><strong>Mohammed &amp; Noor</strong></p><hr style="border:0;border-top:1px solid #ece2c9;margin:26px 0"><div dir="rtl" lang="ar" style="font-family:Tahoma,Arial,sans-serif;line-height:2;text-align:right"><h2 style="color:#9b7c3f;font-size:20px">بطاقة الدخول الرسمية – حفل زفاف محمد ونور</h2><p><strong>'+safeName+' العزيز/ة،</strong></p><p>يسعدنا جداً تأكيد حضوركم ومشاركتنا فرحتنا في هذا اليوم المميز!</p><p>تجدون أدناه <strong>بطاقة الدخول الرقمية ورمز QR الخاص بكم</strong>. يرجى الاحتفاظ بهذه البطاقة على هاتفكم وإبراز رمز QR عند الوصول لمقر الحفل.</p><p><strong>تفاصيل المناسبة:</strong><br>📅 <strong>التاريخ:</strong> السبت، ٢٦ ديسمبر ٢٠٢٦<br>📍 <strong>الموقع:</strong> فندق سافاير أديس - الدور التاسع<br>🎟️ <strong>رمز البطاقة:</strong> '+safeCode+'<br><strong>عدد المقاعد المؤكدة:</strong> '+safeCount+'</p><p>نترقب حضوركم بشوق لنصنع معاً أجمل الذكريات.</p><p>مع خالص المحبة،<br><strong>محمد ونور</strong></p></div></div></div></div>'}
+function sendPassEmail(email,nm,t,party,qrImage){if(!EMAILJS_PUBLIC_KEY||!EMAILJS_SERVICE_ID||!EMAILJS_TEMPLATE_ID)return Promise.resolve(false);
+if(!window.emailjs) return Promise.reject(new Error("EmailJS failed to load."));
+emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
+return emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{to_email:email,email:email,to_name:nm,email_subject:"Your Official Entry Pass – Mohammed & Noor’s Wedding",pass_code:t,guest_count:String(party),event_title:"Mohammed & Noor Wedding",event_date:"Saturday, December 26, 2026",venue:"Sapphire Addis Hotel, 9th Floor",qr_code:qrImage,email_html:buildEmailHtml(nm,t,party,qrImage)}).then(function(){return true})}
+document.getElementById("rsvp-form").addEventListener("submit",async function(event){event.preventDefault();if(!choice||!this.checkValidity())return;
+var nm=document.getElementById("nm").value.trim(),email=document.getElementById("email").value.trim(),partyInput=document.getElementById("party-count"),party=choice=="yes"?Number(partyInput.value):0,ar=lang=="ar",ok=document.getElementById("ok"),button=document.getElementById("send"),t="",st={};
+ok.style.display="block";try{st=JSON.parse(localStorage.getItem("mnPass")||"{}")}catch(error){console.error("Could not read the saved wedding pass:",error)}
+if(choice=="yes"){
+var previous=st.t&&st.n==nm?Number(st.party)||1:0;
+if(seats()+previous<party){ok.textContent=ar?"عذرًا، لا توجد مقاعد كافية للعدد المطلوب.":"Sorry, there are not enough seats for that party size.";return}
+try{t=st.t&&st.n==nm?st.t:tok()}catch(error){console.error("Could not generate a pass code:",error);ok.textContent=ar?"تعذر إنشاء بطاقة الدخول. يرجى المحاولة مجددًا.":"Could not create the entry pass. Please try again.";return}
+if(RSVP_URL){try{var r=await reserve(nm,email,t,party);if(r.full){ok.textContent=ar?"عذرًا، اكتمل العدد المحدد للحضور (١٥٠)، ولا يمكن إصدار بطاقات جديدة.":"Sorry, all 150 seats have been taken, so no more entry passes can be issued.";return}t=r.token||t}catch(error){console.error("RSVP server unreachable:",error);ok.textContent=ar?"تعذر الاتصال بالخادم. يرجى المحاولة مجددًا.":"Could not reach the server. Please try again.";return}}
+try{localStorage.setItem("mnCount",Math.max(0,(+localStorage.getItem("mnCount")||0)-previous+party));localStorage.setItem("mnPass",JSON.stringify({n:nm,t:t,party:party}))}catch(error){console.error("Could not save the wedding RSVP locally:",error)}
+showPass(nm,t,party);
+var qrImage="https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=10&data="+encodeURIComponent(ticketContent(nm,t,party));
+button.disabled=true;
+try{var sent=await sendPassEmail(email,nm,t,party,qrImage);ok.textContent=sent?(ar?"شكرًا لكم 🤍 تم إرسال بطاقة الدخول إلى بريدكم الإلكتروني.":"Thank you 🤍 Your entry pass has been emailed to you."):(ar?"تم تأكيد حضوركم وإنشاء البطاقة. يلزم إعداد خدمة البريد لإرسالها.":"Your attendance is confirmed and the pass is ready. Email delivery needs to be configured.");}
+catch(error){console.error("Could not email the wedding entry pass:",error);ok.textContent=ar?"تم تأكيد حضوركم، لكن تعذر إرسال البريد الإلكتروني. يرجى حفظ رمز QR أو المحاولة لاحقًا.":"Your attendance is confirmed, but the email could not be sent. Please save the QR code or try again later.";if(location.search.indexOf("debug")>-1)ok.textContent+=" ["+(error&&error.status?error.status+" ":"")+((error&&(error.text||error.message))||String(error))+"]"}
+finally{button.disabled=false}
+}else{document.getElementById("pass").style.display="none";if(RSVP_URL)reserve(nm,email,"",0).catch(function(error){console.error("Could not log the decline:",error)});try{var oldCount=+localStorage.getItem("mnCount")||0;if(st.t&&st.n==nm)localStorage.setItem("mnCount",Math.max(0,oldCount-(Number(st.party)||1)));if(st.t&&st.n==nm)localStorage.removeItem("mnPass")}catch(error){console.error("Could not update the saved wedding RSVP:",error)}ok.textContent=ar?"شكرًا لكم 🤍":"Thank you 🤍"}
+var msg=(ar?(choice=="yes"?"أؤكد حضوري لحفل زفاف محمد ونور. الاسم: ":"أعتذر عن الحضور لحفل زفاف محمد ونور. الاسم: ")+nm:(choice=="yes"?"I will attend Mohammed & Noor’s wedding. Name: ":"I’m sorry, I can’t attend Mohammed & Noor’s wedding. Name: ")+nm)+(t?(ar?" · الرمز: ":" · Code: ")+t:"");
+if(WA)window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+else if(!t)try{await navigator.clipboard.writeText(msg)}catch(error){console.error("Could not copy the RSVP response:",error)}});
+setLang("ar");
+</script>
+</body>
+</html>
